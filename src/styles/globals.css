@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Cybersecurity Theme */
+:root {
+  --cyber-dark: #050816;
+  --cyber-secondary: #0B1220;
+  --cyber-blue: #00D9FF;
+  --cyber-green: #00FFB2;
+  --cyber-purple: #7C3AED;
+  --cyber-red: #FF3B5C;
+}
+
+* {
+  @apply transition-colors;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-cyber-dark text-white;
+}
+
+/* Grid Pattern Background */
+.bg-grid-pattern {
+  background-image:
+    linear-gradient(rgba(0, 217, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 217, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Glassmorphism */
+.glass {
+  @apply backdrop-blur-xl bg-white/10 border border-white/20;
+}
+
+.glass-dark {
+  @apply backdrop-blur-xl bg-black/20 border border-white/10;
+}
+
+/* Neon Glow */
+.neon-glow {
+  @apply shadow-neon;
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection Color */
+::selection {
+  @apply bg-cyber-blue text-cyber-dark;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-cyber-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-cyber-blue rounded-full hover:bg-cyber-purple;
+}
+
+/* Terminal Font */
+.terminal {
+  @apply font-mono text-sm tracking-wider;
+}
+
+/* Animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px #00d9ff, 0 0 10px #00d9ff;
+  }
+  50% {
+    box-shadow: 0 0 20px #00d9ff, 0 0 30px #00d9ff;
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Focus Styles */
+button:focus,
+a:focus {
+  @apply outline-none ring-2 ring-cyber-blue ring-offset-2 ring-offset-cyber-dark rounded-lg;
+}
+
+/* Cursor */
+html {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="4" fill="%2300D9FF"/></svg>') 16 16, auto;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    @apply bg-cyber-dark;
+  }
+}
